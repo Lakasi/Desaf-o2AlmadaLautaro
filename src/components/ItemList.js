@@ -1,8 +1,16 @@
 import Item from "./Item"
 
-function ItemList (){
+function ItemList ({productos}){
     return(
-        <Item/>
+
+        <ul className="itemList">
+            {
+                productos.map((producto)=>{
+                    return <Item producto={producto}/>
+                })
+            }
+        </ul>
+       
     );
 }
-export default Item
+export default ItemList
