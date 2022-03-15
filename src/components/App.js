@@ -2,6 +2,7 @@ import NavBar from "./NavBar"
 import ItemListContainer from "./ItemListContainer"
 import Footer from "./Footer"
 import "./estilos.css"
+import ItemDetailContainer from "./ItemDetailContainer"
 
 function App () {
     return( 
@@ -9,6 +10,7 @@ function App () {
         <NavBar/>
         <body>
             <ItemListContainer/>
+            <ItemDetailContainer/>
         </body>
         <Footer/>
         </>
