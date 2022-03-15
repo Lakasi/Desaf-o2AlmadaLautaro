@@ -44,3 +44,33 @@ button{
 .card{
     width: 18rem;
 }
+.itemList{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 15px;
+}
+.item{
+    list-style: none;
+    margin: 0 7rem 0 7rem;
+}
+.itemDetailContainer{
+    background-color: rgb(250, 166, 135);
+}
+.itemDetailContainerInfo{
+    display: flex;
+    flex-direction: row-reverse;
+    background-color: rgb(250, 166, 135);
+    align-items: center;
+    justify-content: space-between;
+}
+.imgDetail{
+    width: 200px;
+    height: 250px;
+    margin: 15px;
+}
+.detailsInfo{
+    margin: 20px;
+}
+.titleDetails{
+    text-align: center;
+}
