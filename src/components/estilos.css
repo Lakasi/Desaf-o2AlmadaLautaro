@@ -74,3 +74,12 @@ button{
 .titleDetails{
     text-align: center;
 }
+.navLinks{
+    color: black
+}
+.navLinks:hover{
+    color: white
+}
+.btn{
+    width: 150px;
+}

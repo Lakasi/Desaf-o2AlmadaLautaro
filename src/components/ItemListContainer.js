@@ -1,5 +1,6 @@
 import ItemList from "./ItemList"
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 const listaProductos = [
     {
@@ -65,26 +66,32 @@ function ItemListContainer({greeting}){
 
     //<ItemCount/>
     const [productos, setProductos] = useState([])
+    const [loading, setLoading] = useState(true)
+    const {cat} = useParams()
 
-    const productoPromise = new Promise((resolve)=>{
-
-        setTimeout(()=>{
-
-            resolve(listaProductos)
-                    
-        },2000) 
-    })
-
+    
     useEffect(()=>{
+
+        const productoPromise = new Promise((resolve)=>{
+
+            setTimeout(()=>{
+                
+                resolve(listaProductos)
+                        
+            },2000) 
+        })
+
 
         productoPromise
         .then((listaProductos)=>{setProductos(listaProductos)})
         .catch((err)=>{console.log(err)})
+        .finally(()=>{setLoading(false)})
 
-    })
+    },[cat])
 
     return(
         <section className="itemListContainer">
+            <p>{loading ? "Cargando... " : "Ya tenes tus productos"}</p>
             <ItemList productos={productos}/>
         </section>
     )

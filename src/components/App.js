@@ -1,19 +1,19 @@
 import NavBar from "./NavBar"
-import ItemListContainer from "./ItemListContainer"
 import Footer from "./Footer"
 import "./estilos.css"
-import ItemDetailContainer from "./ItemDetailContainer"
+import Main from "./Main"
+import {ToastContainer} from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css';
+import { BrowserRouter } from "react-router-dom";
 
 function App () {
     return( 
-        <>
+        <BrowserRouter>
         <NavBar/>
-        <body>
-            <ItemListContainer/>
-            <ItemDetailContainer/>
-        </body>
+        <Main/>
         <Footer/>
-        </>
+        <ToastContainer/>
+        </BrowserRouter>
     )
 };
 export default App
