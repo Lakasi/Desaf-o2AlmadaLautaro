@@ -1,5 +1,6 @@
 import ItemDetail from "./ItemDetail";
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 const listaDetalleProductos = [
     {
@@ -63,22 +64,38 @@ const listaDetalleProductos = [
 function ItemDetailContainer (){
 
     const [details, setDetails] = useState([])
+    const [isLoading, setLoading] = useState(true)
+    const {id} = useParams()
 
     const detailsPromise = new Promise((res)=>{
         res(listaDetalleProductos) 
     })
 
     useEffect(()=>{
+        
+        if(id){
+            detailsPromise
+            .then((listaDetalleProductos)=>{
+                setDetails(listaDetalleProductos.filter(p => p.id == id))
+                setLoading(false)
+            })    
+            .catch((err)=>{console.log(err)}) 
+        }else{
+            detailsPromise
+            .then((listaDetalleProductos)=>{
+                setDetails(listaDetalleProductos)
+                setLoading(false)
+            })    
+            .catch((err)=>{console.log(err)})  
+        }
 
-        detailsPromise
-        .then((listaDetalleProductos)=>{setDetails(listaDetalleProductos)})
-        .catch((err)=>{console.log(err)})
-
-    },[])
+    },[id])
 
     return(
         <section className="itemDetailContainer">
-            <ItemDetail detalles={details}/>
+            {
+                isLoading ? <span>Cargando...</span> : <ItemDetail detalles={details}/>
+            }
         </section>
     )
 

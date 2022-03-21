@@ -64,7 +64,6 @@ const listaProductos = [
 
 function ItemListContainer({greeting}){
 
-    //<ItemCount/>
     const [productos, setProductos] = useState([])
     const [loading, setLoading] = useState(true)
     const {cat} = useParams()
