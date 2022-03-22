@@ -1,4 +1,3 @@
-import ItemCount from "./ItemCount"
 function ItemDetail({detalles}){
 
     return(
@@ -9,7 +8,7 @@ function ItemDetail({detalles}){
                     <h4>{detalles[0].nombre}</h4>
                     <h4>Fecha de lanzamiento: {detalles[0].fechalanzamiento}  </h4>        
                     <h4>Precio: {detalles[0].precio}$</h4>
-                    <ItemCount/>
+                    
                 </div>
                 <div className="p-2">
                     <img className="imgDetail" src={detalles[0].img}/>

@@ -1,27 +1,23 @@
 import {useState} from "react"
 
-function ItemCount() {
-    let [stock, setStock] = useState(5);
-    let [cont, setCont] = useState(1);
+function ItemCount({initial, stock, onAdd}) {
 
+    const [cont, setCont] = useState(1)
     
-    const aumentar = () =>{
+    const aumentar = (e) => {
 
-        if (cont < 6) {
-            setCont(cont + 1);
-            setStock(stock - 1)
+        if (cont < stock) {
+            setCont(cont + 1)
         }
     }
-    const reducir = () =>{
+    const reducir = (e) => {
 
-        if (cont > 1) {
-            setCont(cont - 1);
-            setStock(stock + 1)
+        if (cont > initial) {
+            setCont(cont - 1)
         }
     }
-    const reestrablecer = () => {
-        setCont(1);
-        setStock(5);
+    const confirmar = (e) => {
+        onAdd(cont);
     }
 
     return(
@@ -30,7 +26,7 @@ function ItemCount() {
                 <h4>Cantidad: {cont}</h4>
                 <h4>Stock: {stock}</h4>
                 <button onClick={reducir}>-</button>
-                <button onClick={reestrablecer}>restart</button>
+                <button onClick={confirmar}>Confirmar</button>
                 <button onClick={aumentar}>+</button>
             </div>
         </main>

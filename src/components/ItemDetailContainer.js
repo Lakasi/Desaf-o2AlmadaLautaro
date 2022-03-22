@@ -1,6 +1,8 @@
 import ItemDetail from "./ItemDetail";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import ItemCount from "./ItemCount"
+
 
 const listaDetalleProductos = [
     {
@@ -66,6 +68,7 @@ function ItemDetailContainer (){
     const [details, setDetails] = useState([])
     const [isLoading, setLoading] = useState(true)
     const {id} = useParams()
+    const [selec, setSelec] = useState(false)
 
     const detailsPromise = new Promise((res)=>{
         res(listaDetalleProductos) 
@@ -91,11 +94,19 @@ function ItemDetailContainer (){
 
     },[id])
 
+    const onAdd = (unidadSeleccionada)=>{
+        if (unidadSeleccionada != undefined){
+            setSelec(unidadSeleccionada)
+        }
+    }
+
     return(
         <section className="itemDetailContainer">
             {
                 isLoading ? <span>Cargando...</span> : <ItemDetail detalles={details}/>
             }
+            <ItemCount initial="1" stock="7" onAdd={onAdd}/>
+            <p>{selec ? "Elemento elegido" :"No se eligio ningun elemento"}</p>
         </section>
     )
 
