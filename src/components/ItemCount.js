@@ -1,22 +1,22 @@
 import {useState} from "react"
 
-function ItemCount({initial, stock, onAdd}) {
+function ItemCount({initial=1, stock, onAdd}) {
 
     const [cont, setCont] = useState(1)
     
-    const aumentar = (e) => {
+    const aumentar = () => {
 
         if (cont < stock) {
             setCont(cont + 1)
         }
     }
-    const reducir = (e) => {
+    const reducir = () => {
 
         if (cont > initial) {
             setCont(cont - 1)
         }
     }
-    const confirmar = (e) => {
+    const confirmar = () => {
         onAdd(cont);
     }
 
@@ -26,7 +26,7 @@ function ItemCount({initial, stock, onAdd}) {
                 <h4>Cantidad: {cont}</h4>
                 <h4>Stock: {stock}</h4>
                 <button onClick={reducir}>-</button>
-                <button onClick={confirmar}>Confirmar</button>
+                <button onClick={confirmar}>Agregar a carrito</button>
                 <button onClick={aumentar}>+</button>
             </div>
         </main>

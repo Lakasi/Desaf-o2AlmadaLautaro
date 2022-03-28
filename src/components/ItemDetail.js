@@ -1,4 +1,4 @@
-function ItemDetail({detalles}){
+function ItemDetail({detalles}){ 
 
     return(
         <section className="itemDetailsContainer">

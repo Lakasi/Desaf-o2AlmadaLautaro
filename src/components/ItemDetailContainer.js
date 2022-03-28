@@ -79,7 +79,7 @@ function ItemDetailContainer (){
         if(id){
             detailsPromise
             .then((listaDetalleProductos)=>{
-                setDetails(listaDetalleProductos.filter(p => p.id == id))
+                setDetails(listaDetalleProductos.filter(p => p.id === id))
                 setLoading(false)
             })    
             .catch((err)=>{console.log(err)}) 
@@ -95,7 +95,7 @@ function ItemDetailContainer (){
     },[id])
 
     const onAdd = (unidadSeleccionada)=>{
-        if (unidadSeleccionada != undefined){
+        if (unidadSeleccionada !== undefined){
             setSelec(unidadSeleccionada)
         }
     }
@@ -105,7 +105,7 @@ function ItemDetailContainer (){
             {
                 isLoading ? <span>Cargando...</span> : <ItemDetail detalles={details}/>
             }
-            <ItemCount initial="1" stock="7" onAdd={onAdd}/>
+            <ItemCount initial={1} stock={7} onAdd={onAdd}/>
             <p>{selec ? "Elemento elegido" :"No se eligio ningun elemento"}</p>
         </section>
     )
