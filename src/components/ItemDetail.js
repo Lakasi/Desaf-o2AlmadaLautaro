@@ -1,4 +1,14 @@
+import { contexto } from "./CartContext"
+import {useContext} from "react"
+import ItemCount from "./ItemCount"
+
 function ItemDetail({detalles}){ 
+
+    const {agregarCarrito} = useContext(contexto)
+    const onAdd = (unidadSeleccionada)=>{
+        agregarCarrito(detalles[0], unidadSeleccionada)
+    }
+
 
     return(
         <section className="itemDetailsContainer">
@@ -14,6 +24,7 @@ function ItemDetail({detalles}){
                     <img className="imgDetail" src={detalles[0].img}/>
                 </div>
             </div>
+            <ItemCount initial = {1} stock={7} onAdd={onAdd}/>
         </section>
     )
 

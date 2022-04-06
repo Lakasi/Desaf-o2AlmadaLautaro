@@ -94,18 +94,12 @@ function ItemDetailContainer (){
 
     },[id])
 
-    const onAdd = (unidadSeleccionada)=>{
-        if (unidadSeleccionada !== undefined){
-            setSelec(unidadSeleccionada)
-        }
-    }
 
     return(
         <section className="itemDetailContainer">
             {
                 isLoading ? <span>Cargando...</span> : <ItemDetail detalles={details}/>
             }
-            <ItemCount initial={1} stock={7} onAdd={onAdd}/>
             <p>{selec ? "Elemento elegido" :"No se eligio ningun elemento"}</p>
         </section>
     )
