@@ -10,7 +10,7 @@
     width: 50px;
     color: wheat;;
 }
-h1{
+.navbar_title{
     color: wheat;
 }
 a{
@@ -26,6 +26,7 @@ body{
     display: flex;
     flex-direction: column;
     min-height: 90vh;
+    background-color: rgb(255, 237, 204);
 }
 footer{
     background-color: rgb(158, 62, 62);
@@ -50,8 +51,16 @@ button{
     padding: 15px;
 }
 .item{
+    background-color:rgb(225, 225, 225) ;
     list-style: none;
-    margin: 0 7rem 0 7rem;
+    margin: 0 7rem 2rem 7rem;
+    padding: 15px;
+    border-radius: 10px;
+}
+.item_img{
+    border-radius: 5%;
+    width: 200px;
+    height: 260px;
 }
 .itemDetailContainer{
     background-color: rgb(250, 166, 135);
@@ -82,4 +91,55 @@ button{
 }
 .btn{
     width: 150px;
+    align-items: center;
+}
+.carrito{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+}
+.carrito_title{
+    margin: 1em;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, 'Arial Narrow Bold', sans-serif;
+    font-size:3em;
+    letter-spacing:2px;
+}
+.noItemInCart{
+    text-align: center;
+    font-size: 3em;
+    margin: 1em;
+}
+.backHome{
+    text-align: center;
+    font-size: 2em;
+    color: brown;
+    margin: 1em;
+}
+.cart_img{
+    height: 200px;
+    width: 150px;
+}
+.cart_li{
+    padding: 25px;
+    background-color: rgb(255, 155, 155);
+    list-style: none;
+    width: 100vh;
+}
+.cart_li_top{
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.cart_li_bottom{
+    display: flex;
+    justify-content: space-between;
+}
+h2{
+    color: black;
+}
+h3{
+    color: black;
 }

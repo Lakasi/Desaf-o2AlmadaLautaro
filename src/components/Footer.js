@@ -2,11 +2,7 @@ function Footer (){
    
     return (
         <footer>
-            <p>
-                <a href="">Links</a>
-                <a href="">Links</a>
-                <a href="">Links</a>
-            </p>
+          <p>Copyright</p>
         </footer>
     )
 }

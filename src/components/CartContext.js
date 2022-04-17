@@ -17,7 +17,7 @@ const MiProvider = ({children}) => {
         let productoCarrito = {producto, cantidad}
 
         if(isInCart(producto)){
-            productoCarrito = carrito.find(p => p.producto.id === producto.id)
+            productoCarrito = carrito.find(p => p.producto.id == producto.id)
             productoCarrito.cantidad = productoCarrito.cantidad + cantidad;
             productoCarritoAux = [...carrito]
         }
@@ -39,10 +39,11 @@ const MiProvider = ({children}) => {
 
     const [total, setTotal] = useState(0)
     const checkTotal = () => {
-        let totalAux=0
+        let totalAux = 0
         carrito.map(p => {
             totalAux = totalAux + (p.producto.precio * p.cantidad)
         })
+        setTotal(totalAux)
     }
 
     const isInCart = (producto) => {
@@ -65,22 +66,3 @@ const MiProvider = ({children}) => {
 }
 
 export default MiProvider
-
-// const valorContexto = {
-//     carrito : [
-//     {
-//         id: 153 ,
-//         nombre: "Item 1",
-//         precio: 100,
-//         fechalanzamiento: 2012,
-//         cantidad : 2
-//     },
-//     {
-//         id: 212 ,
-//         nombre: "Item 2",
-//         precio: 150,
-//         fechalanzamiento: 2020,
-//         cantidad : 3
-//     },],
-//     total : 0
-// }

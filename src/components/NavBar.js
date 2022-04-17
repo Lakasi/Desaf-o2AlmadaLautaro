@@ -6,11 +6,11 @@ function NavBar(){
         <>
                 <header className="navbar navbar-light">
                     <CartWidget/>
-                    <Link to="/"><h1>Tienda de videojuegos</h1></Link>
+                    <Link to="/"><h1 className="navbar_title">Tienda de videojuegos</h1></Link>
                     <nav> 
-                        <Link to="/categoria/ofertas">Ofertas</Link>
-                        <Link to="/categoria/todos los juegos">Todos los juegos</Link>
-                        <Link to="/categoria/contacto">Contacto</Link>
+                        <Link className="navLink" to="/categoria/pc">PC</Link>
+                        <Link className="navLink" to="/categoria/playstation">Playstation</Link>
+                        <Link className="navLink" to="/categoria/contacto">Contacto</Link>
                     </nav>
                 </header>
         </>
