@@ -6,7 +6,7 @@ function ItemDetail({producto}){
 
     const {agregarCarrito} = useContext(contexto)
     
-    const onAdd = (unidadSeleccionada)=>{
+    const onAdd = (unidadSeleccionada = 1)=>{
         agregarCarrito(producto, unidadSeleccionada)
     }
 
