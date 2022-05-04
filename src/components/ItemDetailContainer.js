@@ -1,7 +1,7 @@
 import ItemDetail from "./ItemDetail";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import {collection, getDocs, where, query, getDoc,doc} from "firebase/firestore"
+import {getDoc,doc} from "firebase/firestore"
 import {db} from "./Firebase"
 
 function ItemDetailContainer (){
@@ -10,19 +10,13 @@ function ItemDetailContainer (){
     const {id} = useParams()
 
     useEffect(()=>{
-        
-        const q = query(collection(db, "juegos"), where("id", "==", id))
 
-        getDocs(q)
-        .then((resp)=>setProducto(resp.docs.map(p => ({producto:p.data()}))))
-        .catch((err)=>console.log(err))
-
-        const docRef = doc(db, 'productos', id);
+        const docRef = doc(db, 'juegos', id);
         getDoc(docRef)
         .then((res)=> setProducto(res.data()))
+        .catch((err)=>console.log(err))
 
     },[id])
-    console.log(producto)
 
     return(
         <section className="itemDetailContainer">

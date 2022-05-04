@@ -18,14 +18,17 @@ function ItemDetail({producto}){
 
                 producto ?
                 <>
-                <img src={producto.img}/>
-                <div className="itemDetail_producto">
-
-                    <h2>{producto.nombre}</h2>
-                    <p>{producto.precio}</p>
-                    <p>{producto.fechalanzamiento}</p>
-                    <ItemCount initial={1} stock={producto.stock} onAdd={onAdd}></ItemCount>
-
+                <div className="itemDetailContainer">
+                    <div className="itemDC_left">
+                        <img src={producto.imagen} alt="img_product" className="p_img"/>   
+                    </div>
+                    <div className="itemDC_right">
+                             
+                        <h1 className="p_nombre">{producto.nombre}</h1>
+                        <h2 className="p_precio">{producto.precio}$</h2>
+                        
+                        <ItemCount initial={1} stock={producto.stock} onAdd={onAdd}></ItemCount>
+                    </div>
                 </div>
                 </>
                 :

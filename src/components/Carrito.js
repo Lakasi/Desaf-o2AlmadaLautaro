@@ -4,7 +4,7 @@ import {Link} from "react-router-dom"
 
 function Carrito () {
 
-    const {carrito, total, borrarCarrito, limpiarCarrito} = useContext(contexto) 
+    const {carrito, total, borrarCarrito} = useContext(contexto) 
     return (
         <div className="carrito">
             <h1 className="carrito_title">Carrito de compras</h1>
@@ -15,22 +15,21 @@ function Carrito () {
                       return( 
                         <li className="cart_li" key={index} >
                             <div className="cart_li_top">
-                                <p className="cart_title">{item.producto.nombre}</p>    
-                                <p className="cart_price">$ {item.producto.precio}</p>
+                                <h1 className="cart_title">{item.producto.nombre}</h1>    
+                                <h1 className="cart_price">$ {item.producto.precio}</h1>
                             </div>
-                            <p>Consola: {item.producto.consola}</p>
+                            <h4>Consola: {item.producto.consola}</h4>
                             <div className="cart_li_bottom">
-                                {/* <img className="cart_img" src={item.producto.img} alt="" /> */}
-                                <p className="cart_canditad">Cantidad: {item.cantidad}</p>
+                                <h4 className="cart_canditad">Cantidad: {item.cantidad}</h4>
                                 <button onClick={()=> borrarCarrito(item.producto.id)}>Eliminar</button>
                             </div>
                         </li>
                     )
                     })}
                     <div>
-                        <div>
-                            <p>Total</p>
-                            <p>$ {total}</p>
+                        <div className="totalCart">
+                            <h1>Total</h1>
+                            <h1>$ {total}</h1>
                         </div>
                         <button>Generar orden</button>
                         <Link to="/">

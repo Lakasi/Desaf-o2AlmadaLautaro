@@ -22,9 +22,8 @@ function ItemCount({initial=1, stock, onAdd}) {
 
     return(
         <main>
-            <div className="bg-secondary p-2 itemCount">
+            <div className="p-2 itemCount">
                 <h4>Cantidad: {cont}</h4>
-                <h4>Stock: {stock}</h4>
                 <button onClick={reducir}>-</button>
                 <button onClick={confirmar}>Agregar a carrito</button>
                 <button onClick={aumentar}>+</button>

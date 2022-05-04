@@ -22,6 +22,9 @@ a{
 a:hover{
     color: black;
 }
+main{
+    min-height: 100vh;
+}
 body{
     display: flex;
     flex-direction: column;
@@ -124,9 +127,10 @@ button{
 }
 .cart_li{
     padding: 25px;
-    background-color: rgb(255, 155, 155);
+    background-color: rgb(255, 216, 216);
     list-style: none;
     width: 100vh;
+    border: 1em rgb(127, 127, 127) solid;
 }
 .cart_li_top{
     margin: 20px;
@@ -142,4 +146,30 @@ h2{
 }
 h3{
     color: black;
+}
+.itemDetailContainer{
+    display: flex;
+    padding: 1em;
+}
+.p_img{
+    width: 550px;
+    height: 700px;
+}
+.p_nombre{
+    text-align: center;
+}
+.p_precio{
+    padding-top: 3em;
+    padding-bottom: 10em;
+    text-align: center;
+}
+.itemDC_left{
+
+}
+.itemDC_right{
+    padding-left: 5em;
+}
+.totalCart{
+    display: flex;
+    justify-content: space-between;
 }
